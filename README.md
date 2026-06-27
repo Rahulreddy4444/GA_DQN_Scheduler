@@ -2,6 +2,22 @@
 
 > 🎓 B.Tech Minor Project | Department of Computer Science & Engineering | National Institute of Technology (NIT) Allahabad
 
+## Live Demo
+ **Live Application:** https://realtime-ga-scheduler-bheknww9uspb7oyq9nuukm.streamlit.app/
+
+
+## Project Report & Presentation
+
+### Final Project Report
+
+ [View Final Report](./docs/final_report.pdf)
+
+### Project Presentation
+
+ [View Presentation](./docs/Project_Presentation.pptx)
+
+---
+
 ## Overview
 
 Cloud workflow scheduling is a challenging optimization problem due to heterogeneous Virtual Machines (VMs), dynamic workloads, and conflicting objectives such as minimizing execution cost and completion time.
@@ -267,18 +283,6 @@ This project introduces:
 - Anurag Choudhary (20223046)
 - Abhay Kumar (20223004)
 - Akula Sri Subramania Mukesh (20223530)
-
----
-
-## Project Report & Presentation
-
-### Final Project Report
-
- [View Final Report](./docs/final_report.pdf)
-
-### Project Presentation
-
- [View Presentation](./docs/Project_Presentation.pptx)
 
 ---
 
