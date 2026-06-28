@@ -13,7 +13,7 @@
 
 ### Project Presentation
 
-[View Presentation](./docs/Project_Presentation.pptx)
+[View Presentation](./docs/project_presentation.pptx)
 
 ---
 
