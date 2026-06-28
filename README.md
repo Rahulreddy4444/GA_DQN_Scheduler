@@ -1,9 +1,218 @@
-# GA_DQN_Scheduler
+# Cost-Aware Real-Time Multi-VM Workflow Scheduling using Genetic Algorithm (RT-GA)
 
-This repository contains two workflow-scheduling projects:
+> 🎓 B.Tech Final Year Project | Department of Computer Science & Engineering | National Institute of Technology (NIT) Allahabad
 
-- `GA_DQN_Scheduler/` — GA-DQN scheduler implementation and entry scripts.
-- `RealTime_GA_Scheduler/` — real-time GA scheduler with Streamlit dashboard.
+## Live Demo
+**Live Application:** https://realtime-ga-scheduler-bheknww9uspb7oyq9nuukm.streamlit.app/
+
+## Project Report & Presentation
+
+### Final Project Report
+
+[View Final Report](./docs/final_report.pdf)
+
+### Project Presentation
+
+[View Presentation](./docs/Project_Presentation.pptx)
+
+---
+
+## Overview
+
+Cloud workflow scheduling is a challenging optimization problem due to heterogeneous Virtual Machines (VMs), dynamic workloads, and conflicting objectives such as minimizing execution cost and completion time.
+
+This repository contains two related projects:
+
+- `GA_DQN_Scheduler` — a GA-DQN workflow scheduler.
+- `RealTime_GA_Scheduler` — a real-time cost-aware GA scheduler for multi-VM workflows.
+
+The real-time RT-GA project dynamically adapts to cloud conditions and incorporates VM waiting time, cost, and communication overhead into scheduling decisions.
+
+### RT-GA considers:
+
+- Execution Time (Makespan)
+- Resource Utilization
+- Execution Cost
+- Communication Cost
+- Real-Time VM Waiting Time
+
+---
+
+## Problem Statement
+
+Traditional workflow scheduling approaches suffer from several limitations:
+
+- HEFT is static and cannot adapt to changing workloads.
+- Standard Genetic Algorithms are computationally expensive.
+- GA-DQN introduces significant training overhead.
+- Existing solutions often allocate entire workflows to a single VM, limiting parallelism and scalability.
+
+This repository explores both approaches and emphasizes a real-time GA solution that supports:
+
+- Multi-VM task allocation
+- Real-time adaptation to VM states
+- Cost-aware scheduling
+- Fine-grained workflow execution
+- Dynamic load balancing
+
+---
+
+## Objectives
+
+- Integrate real-time VM state information into the Genetic Algorithm fitness function.
+- Enable fine-grained task distribution across multiple VMs.
+- Minimize workflow makespan and execution cost.
+- Improve resource utilization.
+- Maintain low computational overhead suitable for real-time deployment.
+
+---
+
+## Key Features
+
+✔ Real-Time VM Feedback Integration
+
+✔ Multi-VM Workflow Scheduling
+
+✔ Cost-Aware Resource Allocation
+
+✔ Genetic Algorithm Optimization
+
+✔ Dynamic Fitness Evaluation
+
+✔ Adaptive Mutation & Crossover
+
+✔ Workflow DAG Processing
+
+✔ Streamlit-Based Interactive Dashboard
+
+✔ Multi-Core VM Scheduling
+
+---
+
+## System Architecture
+
+The RT-GA framework consists of three major layers:
+
+### 1. Workflow Input Module
+- Receives workflow DAG
+- Parses task dependencies
+- Performs topological sorting
+
+### 2. RT-GA Scheduler
+- Population Initialization
+- Fitness Evaluation
+- Selection
+- Crossover
+- Mutation
+- Real-Time Feedback Integration
+
+### 3. Cloud Infrastructure Layer
+- Multiple Virtual Machines
+- Multi-Core Execution Environment
+- Dynamic Resource Monitoring
+
+---
+
+## RT-GA Workflow
+
+1. Collect real-time VM statistics.
+2. Initialize the population using random and heuristic seeding.
+3. Simulate workflow execution.
+4. Evaluate fitness based on:
+   - Makespan
+   - Execution Cost
+   - Communication Cost
+5. Apply:
+   - Selection
+   - Crossover
+   - Mutation
+6. Update VM states using real-time feedback.
+7. Return the optimal task-to-VM mapping.
+
+---
+
+## Fitness Function
+
+The optimization objective is:
+
+F = αT + βC + γD
+
+Where:
+
+- **T** = Makespan
+- **C** = Execution Cost
+- **D** = Communication Cost
+
+The fitness function dynamically incorporates VM waiting times and system load to improve scheduling decisions.
+
+---
+
+## Chromosome Representation
+
+Each chromosome represents a task-to-VM-core mapping:
+
+Task → VM → Core
+
+Example:
+
+Task1 → VM2 → Core1
+
+Task2 → VM1 → Core3
+
+Task3 → VM3 → Core2
+
+This representation enables fine-grained scheduling and improved parallelism.
+
+---
+
+## Technologies Used
+
+- Python
+- Genetic Algorithms
+- Cloud Computing Concepts
+- Workflow Scheduling
+- DAG Processing
+- Streamlit
+- NumPy
+- Matplotlib
+
+---
+
+## Experimental Setup
+
+### Virtual Machines
+
+| VM | Processing Speed (MIPS) | Cost ($/unit time) |
+|----|-------------------------|-------------------|
+| VM1 | 1000 | 0.2 |
+| VM2 | 1500 | 0.3 |
+| VM3 | 2000 | 0.4 |
+
+### GA Parameters
+
+- Population Size: 10
+- Generations: 15
+- Mutation Rate: 0.1
+
+---
+
+## Results
+
+| Method | Makespan (s) | Execution Cost ($) |
+|----------|-------------|------------------|
+| HEFT | 3.6 | 3.7 |
+| RT-GA | 2.4 | 4.0 |
+| GA-DQN | 3.1 | 5.0 |
+
+### Key Observations
+
+- RT-GA achieved the lowest makespan.
+- Better adaptability under dynamic workloads.
+- Eliminates expensive DRL training overhead.
+- Efficient multi-VM resource utilization.
+- Improved scheduling performance in real-time environments.
+
+---
 
 ## How to run the GA-DQN project
 
@@ -87,10 +296,11 @@ GA_DQN_Scheduler/
 ├── ga_module.py
 ├── utils.py
 ├── __init__.py
-└── README.md
 ├── docs/
 │   ├── final_report.pdf
 │   └── Project_Presentation.pptx
+└── README.md
+
 RealTime_GA_Scheduler/
 ├── app/
 │   └── streamlit_app.py
