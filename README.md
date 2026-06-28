@@ -1,6 +1,6 @@
 # Cost-Aware Real-Time Multi-VM Workflow Scheduling using Genetic Algorithm (RT-GA)
 
-> 🎓 B.Tech Minor Project | Department of Computer Science & Engineering | National Institute of Technology (NIT) Allahabad
+> 🎓 B.Tech Final Year Project | Department of Computer Science & Engineering | National Institute of Technology (NIT) Allahabad
 
 ## Live Demo
  **Live Application:** https://realtime-ga-scheduler-bheknww9uspb7oyq9nuukm.streamlit.app/
