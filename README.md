@@ -269,7 +269,7 @@ This project introduces:
 
 ### Project Type
 
-**B.Tech Minor Project**
+**B.Tech Final Year Project**
 
 ### Supervisor
 
@@ -296,7 +296,7 @@ We also express our gratitude to the **Department of Computer Science & Engineer
 
 ## License
 
-This project was developed as part of a B.Tech Minor Project at NIT Allahabad and is intended for academic and research purposes.
+This project was developed as part of a B.Tech Final Year Project at NIT Allahabad and is intended for academic and research purposes.
 
 ---
 
